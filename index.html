@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Almarai' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>معلومات عن الدولة</title>
+</head>
+
+<body dir="rtl">
+    <main id="main">
+        <div class="search">
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div class="top_section">
+                <h2>ادخل اسم الدولة</h2>
+                <div>
+                    <input type="text" id="countryInput" placeholder="أدخل اسم الدولة مثل السعودية" oninput="search()">
+                    <button onclick="search()">ابحث</button>
+                </div>
+            </div>
+        </div>
+
+     
+
+        <div class="result">
+            <div class="select">
+                <label for="">ترتيب حسب القارة</label>
+                <select name="" id="select" onchange="reset()">
+                    <option value="all">الكل</option>
+                    <option value="Asia">اسيا</option>
+                    <option value="Europe">اوروبا</option>
+                    <option value="Americas">امريكا</option>
+                    <option value="Oceania">استراليا</option>
+                    <option value="Africa">افريقيا</option>
+                    <option value="Antarctic">القطب الجنوبي</option>
+                </select>
+            </div>
+            <div class="content">
+                <div class="loader" style="display: none;"></div>
+            </div>
+            <div class="pageination">
+                <div id="p">
+                    <div onclick="clickLeft()"><i class='fas fa-caret-square-right'></i></div>
+                    <div>
+                        <ul id="pageination">
+                            <li>0</li>
+                            <li id="pageNumber">23</li>
+                            <li>250</li>
+                        </ul>
+                    </div>
+                    <div onclick="clickRight()"><i class='fas fa-caret-square-left'></i></div>
+                </div>
+            </div>
+    </main>
+    <div class="countainer">
+
+    </div>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

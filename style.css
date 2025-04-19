@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Almarai';
+}
+
+body {
+    min-height: 100vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #f7997c; /* Blue */
+    border-bottom: 16px solid #f7997c; /* Blue */
+    border-right: 16px solid #dedddd; /* Blue */
+    border-left: 16px solid #dedddd; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/* ----- start header ----- */
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+main .search{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #222831 50%, #2d4059 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:absolute;
+    right:-50%;
+    top:0;
+    z-index:1;
+  }
+  
+ .search .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .search .bg3 {
+    animation-duration:5s;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+main .top_section{
+    width: 80%;
+    height: auto;
+    margin: 50px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+main .top_section h2 {
+    margin-bottom: 20px;
+    color: #f4f9f4;
+    font-weight: 1000;
+}
+
+main .top_section div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .top_section div input {
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    text-align: right;
+    font-size: 17px;
+    background-color: #f4f9f4;
+}
+
+main .top_section div button {
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    margin-right: 5px;
+    font-size: 17px;
+    background-color: #ff5722;
+    color: #eeeeee;
+    font-weight: 1000;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+main .top_section div button:hover {
+    background-color: #aac5b0;
+    transform: scale(1.05);
+}
+
+main .select{
+    margin: 10px;
+    width: 100%;
+}
+
+.select select {
+    width: 150px;
+    height: 30px;
+    border: none;
+    box-shadow: 1px 1px 5px #dedddd;
+    border-radius: 5px;
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+.select select:focus {
+    background-color: whitesmoke;
+}
+
+.select select option:checked {
+    background-color: #dedddd;
+}
+
+main .result {
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    border-top: 3px #ff5722 solid;
+    padding: 10px;
+}
+
+main .content {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px;
+    position: relative;
+}
+
+.content .item {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 1px 1px 5px #dedddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .img {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.item .img img{
+    width: 80%;
+    margin: 10px;
+    border-radius: 10px;
+    max-height: 130px;
+}
+
+.item .item-body {
+    width: 80%;
+}
+
+.item-body p {
+    margin-top: 10px;
+}
+
+.item-body h6 {
+    font-size: 18px;
+    border-bottom: 1.5px #222831 solid;
+    padding-bottom: 10px;
+}
+
+.item-body button {
+    margin: 10px 0 10px 0;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 1000;
+    color: #2d4059;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+@media only screen and (max-width: 1000px) {
+    main .content {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    main .content {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main .content {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+.pageination, #p {
+    width: 100%;
+    height: auto;
+    padding: 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pageination #p div {
+    width: 100%;
+}
+
+#p {
+    width: 50%;
+}
+.pageination ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.pageination ul li {
+    list-style: none;
+    background-color: #dedddd;
+    margin: 5px;
+    padding: 15px;
+    width: 20px;
+    border-radius: 5px;
+    font-weight: 1000;
+}
+
+.pageination ul li:nth-child(2){
+    background-color: #2d4059;
+    color: #eeeeee;
+}
+
+.pageination i {
+    font-size: 30px;
+    color: #2d4059;
+    cursor: pointer;
+}
+
+.countainer {
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #dedddd;
+    color: #2d4059;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: none;
+}
+
+.countainer #s {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    font-size: 40px;
+    color: #ff5722;
+    cursor: pointer;
+}
+
+.countainer #flex {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+.countainer .img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.countainer .img img {
+    width: 70%;
+    border-radius: 10px;
+}
+
+.countainer h1 {
+    margin-top: 20px;
+}
+.countainer p {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.countainer iframe {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
